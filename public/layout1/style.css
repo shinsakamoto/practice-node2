@@ -1,0 +1,29 @@
+
+#container{
+	width: 100%;
+	margin: 0 auto;
+}
+
+#header{
+	background-color: red;
+}
+
+#main{
+	background-color: blue;
+	overflow: hidden;;
+}
+
+#left{
+	background-color: orange;
+	float: left;
+	width: 200px;
+}
+
+#right{
+	background-color: skyblue;
+	margin-left: 200px;
+}
+
+#footer{
+	background-color: green;
+}
