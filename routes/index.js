@@ -18,12 +18,20 @@ router.post('/add', function(req, res, next) {
 	res.redirect('/');
 });
 
-router.post('/delete', function(req, res, next) {
+router.post('/edit', function(req, res, next) {
 	console.log("post delete");
 	var id = req.body._id;
-	users.remove({_id:ObjectID(id)},function(err,result){
-		console.dir(result);
-	});
+	var action = req.body.action;
+	var name = req.body.name;
+	if(action=="delete"){
+		users.remove({_id:ObjectID(id)},function(err,result){
+			console.dir(result);
+		});
+	}else if(action=="update"){
+		users.update({_id:ObjectID(id)},{ $set: {name:name} },function(err,result){
+			console.dir(result);
+		});
+	}
 	res.redirect('/');
 });
 
