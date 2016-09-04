@@ -14,7 +14,12 @@ MongoClient = mongodb.MongoClient;
 ObjectID = mongodb.ObjectID;
 
 
-MongoClient.connect("mongodb://localhost/testdb",
+
+MONGODB_URL = (process.env.MONGODB_URL || "mongodb://localhost/testdb");
+
+console.log(MONGODB_URL);
+
+MongoClient.connect(MONGODB_URL,
 function(err,db){
 	if(err){return console.dir(err);}
 	console.log("connected to db");

@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
 	users.find().toArray(function(err,items){
 		console.log(items);
-		res.render('index', {items:items});
+		res.render('index', {MONGODB_URL:MONGODB_URL , items:items});
 	});
 });
 
